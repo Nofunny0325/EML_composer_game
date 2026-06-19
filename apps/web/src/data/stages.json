@@ -1,0 +1,353 @@
+[
+  {
+    "id": 1,
+    "name": "First EML",
+    "level": 1,
+    "target_function": "e",
+    "description": "Use eml(1, 1) to create Euler's number e."
+  },
+  {
+    "id": 2,
+    "name": "Exponential Generator",
+    "level": 1,
+    "target_function": "exp(x)",
+    "description": "If the second input is 1, the logarithm term disappears."
+  },
+  {
+    "id": 3,
+    "name": "Logarithm Shadow",
+    "level": 1,
+    "target_function": "log(x)",
+    "description": "eml(1, x) equals e - log(x). Use the created e to isolate log(x)."
+  },
+  {
+    "id": 4,
+    "name": "Zero Builder",
+    "level": 1,
+    "target_function": "0",
+    "description": "Subtract identical expressions to make the neutral base for algebra."
+  },
+  {
+    "id": 5,
+    "name": "Addition",
+    "level": 1,
+    "target_function": "x + y",
+    "description": "Use the inverse relation between log and exp to turn multiplication into addition."
+  },
+  {
+    "id": 6,
+    "name": "Subtraction",
+    "level": 1,
+    "target_function": "x - y",
+    "description": "Combine addition with negation."
+  },
+  {
+    "id": 7,
+    "name": "Multiplication Seed",
+    "level": 1,
+    "target_function": "x * y",
+    "description": "Build the pattern exp(y * log(x))."
+  },
+  {
+    "id": 8,
+    "name": "Division",
+    "level": 2,
+    "target_function": "x / y",
+    "description": "Combine multiplication with reciprocal construction."
+  },
+  {
+    "id": 9,
+    "name": "Reciprocal",
+    "level": 2,
+    "target_function": "1 / x",
+    "description": "Exponentiating a negative logarithm gives a reciprocal."
+  },
+  {
+    "id": 10,
+    "name": "Negation",
+    "level": 2,
+    "target_function": "-x",
+    "description": "Subtract x from zero."
+  },
+  {
+    "id": 11,
+    "name": "Square",
+    "level": 2,
+    "target_function": "x^2",
+    "description": "Multiply x by itself."
+  },
+  {
+    "id": 12,
+    "name": "Cube",
+    "level": 2,
+    "target_function": "x^3",
+    "description": "Multiply x squared by x."
+  },
+  {
+    "id": 13,
+    "name": "General Power",
+    "level": 2,
+    "target_function": "x^y",
+    "description": "Use x^y = exp(y * log(x))."
+  },
+  {
+    "id": 14,
+    "name": "Square Root",
+    "level": 2,
+    "target_function": "sqrt(x)",
+    "description": "sqrt(x) is x^(1/2)."
+  },
+  {
+    "id": 15,
+    "name": "Variable Root",
+    "level": 2,
+    "target_function": "x^(1/y)",
+    "description": "Combine general power and reciprocal."
+  },
+  {
+    "id": 16,
+    "name": "Absolute Value",
+    "level": 2,
+    "target_function": "abs(x)",
+    "description": "Over the real numbers, abs(x) can be represented as sqrt(x^2)."
+  },
+  {
+    "id": 17,
+    "name": "Average",
+    "level": 2,
+    "target_function": "(x + y) / 2",
+    "description": "Add x and y, then multiply by the reciprocal of 2."
+  },
+  {
+    "id": 18,
+    "name": "Distance",
+    "level": 2,
+    "target_function": "abs(x - y)",
+    "description": "Build a difference, then apply absolute value."
+  },
+  {
+    "id": 19,
+    "name": "Hyperbolic Sine",
+    "level": 3,
+    "target_function": "sinh(x)",
+    "description": "sinh(x) = (exp(x) - exp(-x)) / 2."
+  },
+  {
+    "id": 20,
+    "name": "Hyperbolic Cosine",
+    "level": 3,
+    "target_function": "cosh(x)",
+    "description": "cosh(x) = (exp(x) + exp(-x)) / 2."
+  },
+  {
+    "id": 21,
+    "name": "Hyperbolic Tangent",
+    "level": 3,
+    "target_function": "tanh(x)",
+    "description": "tanh(x) = sinh(x) / cosh(x)."
+  },
+  {
+    "id": 22,
+    "name": "Hyperbolic Cotangent",
+    "level": 3,
+    "target_function": "coth(x)",
+    "description": "coth(x) is the reciprocal of tanh(x)."
+  },
+  {
+    "id": 23,
+    "name": "Hyperbolic Secant",
+    "level": 3,
+    "target_function": "sech(x)",
+    "description": "sech(x) = 1 / cosh(x)."
+  },
+  {
+    "id": 24,
+    "name": "Hyperbolic Cosecant",
+    "level": 3,
+    "target_function": "csch(x)",
+    "description": "csch(x) = 1 / sinh(x)."
+  },
+  {
+    "id": 25,
+    "name": "Inverse Hyperbolic Sine",
+    "level": 3,
+    "target_function": "asinh(x)",
+    "description": "asinh(x) = log(x + sqrt(x^2 + 1))."
+  },
+  {
+    "id": 26,
+    "name": "Inverse Hyperbolic Cosine",
+    "level": 3,
+    "target_function": "acosh(x)",
+    "description": "acosh(x) = log(x + sqrt(x - 1) * sqrt(x + 1))."
+  },
+  {
+    "id": 27,
+    "name": "Inverse Hyperbolic Tangent",
+    "level": 3,
+    "target_function": "atanh(x)",
+    "description": "atanh(x) = 1/2 * log((1 + x) / (1 - x))."
+  },
+  {
+    "id": 28,
+    "name": "Softplus",
+    "level": 3,
+    "target_function": "log(1 + exp(x))",
+    "description": "A smooth nonlinear function built from exp and log."
+  },
+  {
+    "id": 29,
+    "name": "GELU Core",
+    "level": 3,
+    "target_function": "x * tanh(x)",
+    "description": "Compose multiplication with tanh."
+  },
+  {
+    "id": 30,
+    "name": "Imaginary Unit",
+    "level": 4,
+    "target_function": "i",
+    "description": "In complex mode, i is verified as sqrt(-1)."
+  },
+  {
+    "id": 31,
+    "name": "Complex Exponential",
+    "level": 4,
+    "target_function": "exp(i*x)",
+    "description": "The starting point of Euler's formula."
+  },
+  {
+    "id": 32,
+    "name": "Sine",
+    "level": 4,
+    "target_function": "sin(x)",
+    "description": "sin(x) = (exp(i*x) - exp(-i*x)) / (2*i)."
+  },
+  {
+    "id": 33,
+    "name": "Cosine",
+    "level": 4,
+    "target_function": "cos(x)",
+    "description": "cos(x) = (exp(i*x) + exp(-i*x)) / 2."
+  },
+  {
+    "id": 34,
+    "name": "Tangent",
+    "level": 4,
+    "target_function": "tan(x)",
+    "description": "tan(x) = sin(x) / cos(x)."
+  },
+  {
+    "id": 35,
+    "name": "Cotangent",
+    "level": 4,
+    "target_function": "cot(x)",
+    "description": "cot(x) is the reciprocal of tan(x)."
+  },
+  {
+    "id": 36,
+    "name": "Secant",
+    "level": 4,
+    "target_function": "sec(x)",
+    "description": "sec(x) = 1 / cos(x)."
+  },
+  {
+    "id": 37,
+    "name": "Cosecant",
+    "level": 4,
+    "target_function": "csc(x)",
+    "description": "csc(x) = 1 / sin(x)."
+  },
+  {
+    "id": 38,
+    "name": "Arctangent",
+    "level": 4,
+    "target_function": "atan(x)",
+    "description": "atan(x) = (i/2) * log((i + x) / (i - x))."
+  },
+  {
+    "id": 39,
+    "name": "Arcsine",
+    "level": 4,
+    "target_function": "asin(x)",
+    "description": "asin(x) = -i * log(i*x + sqrt(1 - x^2))."
+  },
+  {
+    "id": 40,
+    "name": "Arccosine",
+    "level": 4,
+    "target_function": "acos(x)",
+    "description": "acos(x) can be expressed as pi/2 - asin(x)."
+  },
+  {
+    "id": 41,
+    "name": "Maximum",
+    "level": 5,
+    "target_function": "max(x, y)",
+    "description": "max(x, y) = (x + y + abs(x - y)) / 2."
+  },
+  {
+    "id": 42,
+    "name": "Minimum",
+    "level": 5,
+    "target_function": "min(x, y)",
+    "description": "min(x, y) = (x + y - abs(x - y)) / 2."
+  },
+  {
+    "id": 43,
+    "name": "ReLU",
+    "level": 5,
+    "target_function": "max(0, x)",
+    "description": "ReLU(x) = (x + abs(x)) / 2."
+  },
+  {
+    "id": 44,
+    "name": "Sign",
+    "level": 5,
+    "target_function": "sgn(x)",
+    "description": "Away from zero, sgn(x) = x / abs(x)."
+  },
+  {
+    "id": 45,
+    "name": "Logistic Sigmoid",
+    "level": 5,
+    "target_function": "1 / (1 + exp(-x))",
+    "description": "A classic S-shaped function made with negative exponentials and reciprocals."
+  },
+  {
+    "id": 46,
+    "name": "Softsign",
+    "level": 5,
+    "target_function": "x / (1 + abs(x))",
+    "description": "A stable nonlinear function made from absolute value and division."
+  },
+  {
+    "id": 47,
+    "name": "Hardtanh",
+    "level": 5,
+    "target_function": "max(-1, min(1, x))",
+    "description": "Nest min and max to clamp x between -1 and 1."
+  },
+  {
+    "id": 48,
+    "name": "Gaussian",
+    "level": 5,
+    "target_function": "exp(-x^2)",
+    "description": "Compose square, negation, and exponentiation."
+  },
+  {
+    "id": 49,
+    "name": "Continuous mod2",
+    "level": 5,
+    "target_function": "(1 - cos(pi*x)) / 2",
+    "description": "For integer x, this is 0 on even values and 1 on odd values."
+  },
+  {
+    "id": 50,
+    "name": "Smooth Maximum",
+    "level": 5,
+    "target_function": "log(exp(x) + exp(y))",
+    "description": "Log-sum-exp is a smooth approximation of max(x, y)."
+  }
+]
+
