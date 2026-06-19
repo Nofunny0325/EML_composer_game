@@ -29,30 +29,30 @@ export function AuthForm({ mode }: { mode: Mode }) {
         })
       });
     } catch {
-      setError("Could not connect to the server.");
+      setError("서버에 연결하지 못했습니다.");
       return;
     }
 
     const data = await readJsonResponse(res);
 
     if (!res.ok) {
-      setError(data.error ?? "Authentication failed.");
+      setError(data.error ?? "인증에 실패했습니다.");
       return;
     }
 
-    localStorage.setItem("eml_token", data.token);
+    localStorage.removeItem("eml_token");
     router.push("/app");
   }
 
   return (
     <form className="auth" onSubmit={onSubmit}>
       <div className="authHeader">
-        <p className="eyebrow">EML Composer</p>
-        <h1>{mode === "login" ? "Welcome back" : "Create account"}</h1>
+        <p className="eyebrow">EML 합성 게임</p>
+        <h1>{mode === "login" ? "다시 시작하기" : "계정 만들기"}</h1>
         <p className="muted">
           {mode === "login"
-            ? "Sign in to continue your stage progress."
-            : "Start saving clears and best attempts."}
+            ? "로그인하면 스테이지 진행도를 이어서 플레이할 수 있습니다."
+            : "클리어 기록과 최고 기록을 저장하려면 계정을 만들어 주세요."}
         </p>
       </div>
 
@@ -60,14 +60,14 @@ export function AuthForm({ mode }: { mode: Mode }) {
         <input
           value={displayName}
           onChange={(event) => setDisplayName(event.target.value)}
-          placeholder="Display name"
+          placeholder="닉네임"
         />
       ) : null}
 
       <input
         value={email}
         onChange={(event) => setEmail(event.target.value)}
-        placeholder="Email"
+        placeholder="이메일"
         type="email"
         required
       />
@@ -75,7 +75,7 @@ export function AuthForm({ mode }: { mode: Mode }) {
       <input
         value={password}
         onChange={(event) => setPassword(event.target.value)}
-        placeholder="Password"
+        placeholder="비밀번호"
         type="password"
         required
       />
@@ -83,7 +83,7 @@ export function AuthForm({ mode }: { mode: Mode }) {
       {error ? <p className="result fail">{error}</p> : null}
 
       <button className="primary" type="submit">
-        {mode === "login" ? "Login" : "Register"}
+        {mode === "login" ? "로그인" : "회원가입"}
       </button>
     </form>
   );
@@ -93,12 +93,12 @@ async function readJsonResponse(res: Response) {
   const text = await res.text();
 
   if (!text) {
-    return { error: `Empty response from server. HTTP ${res.status}` };
+    return { error: `서버 응답이 비어 있습니다. HTTP ${res.status}` };
   }
 
   try {
     return JSON.parse(text);
   } catch {
-    return { error: text.slice(0, 240) || `Invalid server response. HTTP ${res.status}` };
+    return { error: text.slice(0, 240) || `서버 응답 형식이 올바르지 않습니다. HTTP ${res.status}` };
   }
 }

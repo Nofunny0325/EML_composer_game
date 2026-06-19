@@ -47,7 +47,7 @@ export function collectBlockIds(node: CompositionNode): BlockId[] {
 
 export function assertCompositionNode(value: unknown): asserts value is CompositionNode {
   if (!isCompositionNode(value)) {
-    throw new Error("Invalid composition tree.");
+    throw new Error("합성 트리 형식이 올바르지 않습니다.");
   }
 }
 

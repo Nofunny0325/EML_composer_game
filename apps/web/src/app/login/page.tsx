@@ -6,9 +6,8 @@ export default function LoginPage() {
     <main className="page">
       <AuthForm mode="login" />
       <p className="muted" style={{ textAlign: "center" }}>
-        No account yet? <Link href="/register">Register</Link>
+        아직 계정이 없나요? <Link href="/register">회원가입</Link>
       </p>
     </main>
   );
 }
-

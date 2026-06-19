@@ -1,353 +1,352 @@
 [
   {
     "id": 1,
-    "name": "First EML",
+    "name": "첫 번째 EML",
     "level": 1,
     "target_function": "e",
-    "description": "Use eml(1, 1) to create Euler's number e."
+    "description": "1을 양쪽 칸에 넣어 eml(1, 1)을 만들면 오일러 수 e가 됩니다."
   },
   {
     "id": 2,
-    "name": "Exponential Generator",
+    "name": "지수 생성기",
     "level": 1,
     "target_function": "exp(x)",
-    "description": "If the second input is 1, the logarithm term disappears."
+    "description": "오른쪽 입력이 1이면 log(1)이 0이 되어 exp(x)만 남습니다."
   },
   {
     "id": 3,
-    "name": "Logarithm Shadow",
+    "name": "로그의 그림자",
     "level": 1,
     "target_function": "log(x)",
-    "description": "eml(1, x) equals e - log(x). Use the created e to isolate log(x)."
+    "description": "eml(1, x)는 e - log(x)입니다. 이미 만든 e를 이용해 log(x)를 분리해 보세요."
   },
   {
     "id": 4,
-    "name": "Zero Builder",
+    "name": "0 만들기",
     "level": 1,
     "target_function": "0",
-    "description": "Subtract identical expressions to make the neutral base for algebra."
+    "description": "같은 값을 서로 빼면 대수 조합의 기본 재료인 0을 만들 수 있습니다."
   },
   {
     "id": 5,
-    "name": "Addition",
+    "name": "덧셈",
     "level": 1,
     "target_function": "x + y",
-    "description": "Use the inverse relation between log and exp to turn multiplication into addition."
+    "description": "log와 exp의 역관계를 이용하면 곱셈 구조를 덧셈으로 바꿀 수 있습니다."
   },
   {
     "id": 6,
-    "name": "Subtraction",
+    "name": "뺄셈",
     "level": 1,
     "target_function": "x - y",
-    "description": "Combine addition with negation."
+    "description": "덧셈과 부호 반전을 조합해 차이를 만들어 보세요."
   },
   {
     "id": 7,
-    "name": "Multiplication Seed",
+    "name": "곱셈의 씨앗",
     "level": 1,
     "target_function": "x * y",
-    "description": "Build the pattern exp(y * log(x))."
+    "description": "exp(y * log(x)) 패턴을 목표로 생각하면 곱셈을 만들 수 있습니다."
   },
   {
     "id": 8,
-    "name": "Division",
+    "name": "나눗셈",
     "level": 2,
     "target_function": "x / y",
-    "description": "Combine multiplication with reciprocal construction."
+    "description": "곱셈과 역수 만들기를 함께 사용하세요."
   },
   {
     "id": 9,
-    "name": "Reciprocal",
+    "name": "역수",
     "level": 2,
     "target_function": "1 / x",
-    "description": "Exponentiating a negative logarithm gives a reciprocal."
+    "description": "음수 로그를 지수화하면 역수가 됩니다."
   },
   {
     "id": 10,
-    "name": "Negation",
+    "name": "부호 반전",
     "level": 2,
     "target_function": "-x",
-    "description": "Subtract x from zero."
+    "description": "0에서 x를 빼면 -x를 만들 수 있습니다."
   },
   {
     "id": 11,
-    "name": "Square",
+    "name": "제곱",
     "level": 2,
     "target_function": "x^2",
-    "description": "Multiply x by itself."
+    "description": "x를 자기 자신과 곱하세요."
   },
   {
     "id": 12,
-    "name": "Cube",
+    "name": "세제곱",
     "level": 2,
     "target_function": "x^3",
-    "description": "Multiply x squared by x."
+    "description": "x^2에 x를 한 번 더 곱하면 됩니다."
   },
   {
     "id": 13,
-    "name": "General Power",
+    "name": "일반 거듭제곱",
     "level": 2,
     "target_function": "x^y",
-    "description": "Use x^y = exp(y * log(x))."
+    "description": "x^y = exp(y * log(x)) 공식을 사용해 보세요."
   },
   {
     "id": 14,
-    "name": "Square Root",
+    "name": "제곱근",
     "level": 2,
     "target_function": "sqrt(x)",
-    "description": "sqrt(x) is x^(1/2)."
+    "description": "sqrt(x)는 x^(1/2)와 같습니다."
   },
   {
     "id": 15,
-    "name": "Variable Root",
+    "name": "변수 루트",
     "level": 2,
     "target_function": "x^(1/y)",
-    "description": "Combine general power and reciprocal."
+    "description": "일반 거듭제곱과 역수를 합치면 됩니다."
   },
   {
     "id": 16,
-    "name": "Absolute Value",
+    "name": "절댓값",
     "level": 2,
     "target_function": "abs(x)",
-    "description": "Over the real numbers, abs(x) can be represented as sqrt(x^2)."
+    "description": "실수 범위에서는 abs(x)를 sqrt(x^2)로 표현할 수 있습니다."
   },
   {
     "id": 17,
-    "name": "Average",
+    "name": "평균",
     "level": 2,
     "target_function": "(x + y) / 2",
-    "description": "Add x and y, then multiply by the reciprocal of 2."
+    "description": "x와 y를 더한 뒤 2의 역수를 곱하세요."
   },
   {
     "id": 18,
-    "name": "Distance",
+    "name": "거리",
     "level": 2,
     "target_function": "abs(x - y)",
-    "description": "Build a difference, then apply absolute value."
+    "description": "먼저 차이를 만들고, 그 결과에 절댓값을 적용하세요."
   },
   {
     "id": 19,
-    "name": "Hyperbolic Sine",
+    "name": "쌍곡사인",
     "level": 3,
     "target_function": "sinh(x)",
-    "description": "sinh(x) = (exp(x) - exp(-x)) / 2."
+    "description": "sinh(x) = (exp(x) - exp(-x)) / 2 입니다."
   },
   {
     "id": 20,
-    "name": "Hyperbolic Cosine",
+    "name": "쌍곡코사인",
     "level": 3,
     "target_function": "cosh(x)",
-    "description": "cosh(x) = (exp(x) + exp(-x)) / 2."
+    "description": "cosh(x) = (exp(x) + exp(-x)) / 2 입니다."
   },
   {
     "id": 21,
-    "name": "Hyperbolic Tangent",
+    "name": "쌍곡탄젠트",
     "level": 3,
     "target_function": "tanh(x)",
-    "description": "tanh(x) = sinh(x) / cosh(x)."
+    "description": "tanh(x)는 sinh(x)를 cosh(x)로 나눈 값입니다."
   },
   {
     "id": 22,
-    "name": "Hyperbolic Cotangent",
+    "name": "쌍곡코탄젠트",
     "level": 3,
     "target_function": "coth(x)",
-    "description": "coth(x) is the reciprocal of tanh(x)."
+    "description": "coth(x)는 tanh(x)의 역수입니다."
   },
   {
     "id": 23,
-    "name": "Hyperbolic Secant",
+    "name": "쌍곡시컨트",
     "level": 3,
     "target_function": "sech(x)",
-    "description": "sech(x) = 1 / cosh(x)."
+    "description": "sech(x) = 1 / cosh(x) 입니다."
   },
   {
     "id": 24,
-    "name": "Hyperbolic Cosecant",
+    "name": "쌍곡코시컨트",
     "level": 3,
     "target_function": "csch(x)",
-    "description": "csch(x) = 1 / sinh(x)."
+    "description": "csch(x) = 1 / sinh(x) 입니다."
   },
   {
     "id": 25,
-    "name": "Inverse Hyperbolic Sine",
+    "name": "역쌍곡사인",
     "level": 3,
     "target_function": "asinh(x)",
-    "description": "asinh(x) = log(x + sqrt(x^2 + 1))."
+    "description": "asinh(x) = log(x + sqrt(x^2 + 1)) 공식을 떠올려 보세요."
   },
   {
     "id": 26,
-    "name": "Inverse Hyperbolic Cosine",
+    "name": "역쌍곡코사인",
     "level": 3,
     "target_function": "acosh(x)",
-    "description": "acosh(x) = log(x + sqrt(x - 1) * sqrt(x + 1))."
+    "description": "acosh(x) = log(x + sqrt(x - 1) * sqrt(x + 1)) 입니다."
   },
   {
     "id": 27,
-    "name": "Inverse Hyperbolic Tangent",
+    "name": "역쌍곡탄젠트",
     "level": 3,
     "target_function": "atanh(x)",
-    "description": "atanh(x) = 1/2 * log((1 + x) / (1 - x))."
+    "description": "atanh(x) = 1/2 * log((1 + x) / (1 - x)) 입니다."
   },
   {
     "id": 28,
-    "name": "Softplus",
+    "name": "소프트플러스",
     "level": 3,
     "target_function": "log(1 + exp(x))",
-    "description": "A smooth nonlinear function built from exp and log."
+    "description": "exp와 log만으로 만드는 부드러운 비선형 함수입니다."
   },
   {
     "id": 29,
-    "name": "GELU Core",
+    "name": "GELU 핵심",
     "level": 3,
     "target_function": "x * tanh(x)",
-    "description": "Compose multiplication with tanh."
+    "description": "곱셈 블록과 tanh 블록을 조합하세요."
   },
   {
     "id": 30,
-    "name": "Imaginary Unit",
+    "name": "허수 단위",
     "level": 4,
     "target_function": "i",
-    "description": "In complex mode, i is verified as sqrt(-1)."
+    "description": "복소수 단계에서는 i를 sqrt(-1)로 검증합니다."
   },
   {
     "id": 31,
-    "name": "Complex Exponential",
+    "name": "복소 지수",
     "level": 4,
     "target_function": "exp(i*x)",
-    "description": "The starting point of Euler's formula."
+    "description": "오일러 공식으로 가는 출발점입니다."
   },
   {
     "id": 32,
-    "name": "Sine",
+    "name": "사인",
     "level": 4,
     "target_function": "sin(x)",
-    "description": "sin(x) = (exp(i*x) - exp(-i*x)) / (2*i)."
+    "description": "sin(x) = (exp(i*x) - exp(-i*x)) / (2*i) 입니다."
   },
   {
     "id": 33,
-    "name": "Cosine",
+    "name": "코사인",
     "level": 4,
     "target_function": "cos(x)",
-    "description": "cos(x) = (exp(i*x) + exp(-i*x)) / 2."
+    "description": "cos(x) = (exp(i*x) + exp(-i*x)) / 2 입니다."
   },
   {
     "id": 34,
-    "name": "Tangent",
+    "name": "탄젠트",
     "level": 4,
     "target_function": "tan(x)",
-    "description": "tan(x) = sin(x) / cos(x)."
+    "description": "tan(x)는 sin(x)를 cos(x)로 나눈 값입니다."
   },
   {
     "id": 35,
-    "name": "Cotangent",
+    "name": "코탄젠트",
     "level": 4,
     "target_function": "cot(x)",
-    "description": "cot(x) is the reciprocal of tan(x)."
+    "description": "cot(x)는 tan(x)의 역수입니다."
   },
   {
     "id": 36,
-    "name": "Secant",
+    "name": "시컨트",
     "level": 4,
     "target_function": "sec(x)",
-    "description": "sec(x) = 1 / cos(x)."
+    "description": "sec(x) = 1 / cos(x) 입니다."
   },
   {
     "id": 37,
-    "name": "Cosecant",
+    "name": "코시컨트",
     "level": 4,
     "target_function": "csc(x)",
-    "description": "csc(x) = 1 / sin(x)."
+    "description": "csc(x) = 1 / sin(x) 입니다."
   },
   {
     "id": 38,
-    "name": "Arctangent",
+    "name": "아크탄젠트",
     "level": 4,
     "target_function": "atan(x)",
-    "description": "atan(x) = (i/2) * log((i + x) / (i - x))."
+    "description": "atan(x) = (i/2) * log((i + x) / (i - x)) 입니다."
   },
   {
     "id": 39,
-    "name": "Arcsine",
+    "name": "아크사인",
     "level": 4,
     "target_function": "asin(x)",
-    "description": "asin(x) = -i * log(i*x + sqrt(1 - x^2))."
+    "description": "asin(x) = -i * log(i*x + sqrt(1 - x^2)) 입니다."
   },
   {
     "id": 40,
-    "name": "Arccosine",
+    "name": "아크코사인",
     "level": 4,
     "target_function": "acos(x)",
-    "description": "acos(x) can be expressed as pi/2 - asin(x)."
+    "description": "acos(x)는 pi/2 - asin(x) 형태로 표현할 수 있습니다."
   },
   {
     "id": 41,
-    "name": "Maximum",
+    "name": "최댓값",
     "level": 5,
     "target_function": "max(x, y)",
-    "description": "max(x, y) = (x + y + abs(x - y)) / 2."
+    "description": "max(x, y) = (x + y + abs(x - y)) / 2 입니다."
   },
   {
     "id": 42,
-    "name": "Minimum",
+    "name": "최솟값",
     "level": 5,
     "target_function": "min(x, y)",
-    "description": "min(x, y) = (x + y - abs(x - y)) / 2."
+    "description": "min(x, y) = (x + y - abs(x - y)) / 2 입니다."
   },
   {
     "id": 43,
     "name": "ReLU",
     "level": 5,
     "target_function": "max(0, x)",
-    "description": "ReLU(x) = (x + abs(x)) / 2."
+    "description": "ReLU(x) = (x + abs(x)) / 2 입니다."
   },
   {
     "id": 44,
-    "name": "Sign",
+    "name": "부호 함수",
     "level": 5,
     "target_function": "sgn(x)",
-    "description": "Away from zero, sgn(x) = x / abs(x)."
+    "description": "0이 아닌 곳에서는 sgn(x) = x / abs(x) 입니다."
   },
   {
     "id": 45,
-    "name": "Logistic Sigmoid",
+    "name": "로지스틱 시그모이드",
     "level": 5,
     "target_function": "1 / (1 + exp(-x))",
-    "description": "A classic S-shaped function made with negative exponentials and reciprocals."
+    "description": "음수 지수와 역수로 만드는 대표적인 S자 함수입니다."
   },
   {
     "id": 46,
-    "name": "Softsign",
+    "name": "소프트사인",
     "level": 5,
     "target_function": "x / (1 + abs(x))",
-    "description": "A stable nonlinear function made from absolute value and division."
+    "description": "절댓값과 나눗셈으로 만드는 안정적인 비선형 함수입니다."
   },
   {
     "id": 47,
-    "name": "Hardtanh",
+    "name": "하드탄젠트",
     "level": 5,
     "target_function": "max(-1, min(1, x))",
-    "description": "Nest min and max to clamp x between -1 and 1."
+    "description": "min과 max를 중첩해서 x를 -1과 1 사이로 제한하세요."
   },
   {
     "id": 48,
-    "name": "Gaussian",
+    "name": "가우시안",
     "level": 5,
     "target_function": "exp(-x^2)",
-    "description": "Compose square, negation, and exponentiation."
+    "description": "제곱, 부호 반전, 지수 함수를 차례로 조합하세요."
   },
   {
     "id": 49,
-    "name": "Continuous mod2",
+    "name": "연속 mod2",
     "level": 5,
     "target_function": "(1 - cos(pi*x)) / 2",
-    "description": "For integer x, this is 0 on even values and 1 on odd values."
+    "description": "정수 x에 대해 짝수에서는 0, 홀수에서는 1이 됩니다."
   },
   {
     "id": 50,
-    "name": "Smooth Maximum",
+    "name": "부드러운 최댓값",
     "level": 5,
     "target_function": "log(exp(x) + exp(y))",
-    "description": "Log-sum-exp is a smooth approximation of max(x, y)."
+    "description": "log-sum-exp는 max(x, y)를 부드럽게 근사하는 함수입니다."
   }
 ]
-

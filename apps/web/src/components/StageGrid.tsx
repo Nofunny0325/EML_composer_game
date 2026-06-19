@@ -10,15 +10,7 @@ export function StageGrid({ stages }: { stages: StageDefinition[] }) {
   });
 
   useEffect(() => {
-    const token = localStorage.getItem("eml_token");
-
-    if (!token) {
-      return;
-    }
-
-    fetch("/api/me/progress", {
-      headers: { authorization: `Bearer ${token}` }
-    })
+    fetch("/api/me/progress")
       .then((res) => res.text())
       .then((text) => {
         if (!text) {
@@ -51,18 +43,18 @@ export function StageGrid({ stages }: { stages: StageDefinition[] }) {
         if (!unlocked) {
           return (
             <div key={stage.id} className={className} aria-disabled="true">
-              <span className="stageMeta">Stage {stage.id} / Level {stage.level}</span>
+              <span className="stageMeta">스테이지 {stage.id} / 레벨 {stage.level}</span>
               <strong>{stage.name}</strong>
-              <small className="stageLock">Locked</small>
+              <small className="stageLock">잠김</small>
             </div>
           );
         }
 
         return (
           <Link key={stage.id} className={className} href={`/app/stages/${stage.id}`}>
-            <span className="stageMeta">Stage {stage.id} / Level {stage.level}</span>
+            <span className="stageMeta">스테이지 {stage.id} / 레벨 {stage.level}</span>
             <strong>{stage.name}</strong>
-            <small>{cleared ? "Cleared" : stage.target_function}</small>
+            <small>{cleared ? "클리어" : stage.target_function}</small>
           </Link>
         );
       })}

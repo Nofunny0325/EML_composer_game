@@ -20,17 +20,17 @@ export default async function StageDetailPage({
     <main className="page stageDetail">
       <section className="panel stageBrief">
         <Link className="backLink" href="/app/stages">
-          Back to stages
+          스테이지 목록으로
         </Link>
         <div>
-          <p className="eyebrow">Level {stage.level}</p>
+          <p className="eyebrow">레벨 {stage.level}</p>
           <h1>
-            Stage {stage.id}: {stage.name}
+            스테이지 {stage.id}: {stage.name}
           </h1>
         </div>
 
         <div className="targetBox">
-          <span>Target</span>
+          <span>목표 함수</span>
           <code>{stage.target_function}</code>
         </div>
 

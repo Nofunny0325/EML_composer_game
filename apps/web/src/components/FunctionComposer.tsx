@@ -77,7 +77,7 @@ export function FunctionComposer({ stageId }: { stageId: number }) {
 
   function combine() {
     if (!left || !right) {
-      setResult({ ok: false, message: "Drop one block into each EML slot first." });
+      setResult({ ok: false, message: "EML의 왼쪽과 오른쪽 칸에 블록을 하나씩 넣어 주세요." });
       return;
     }
 
@@ -106,14 +106,7 @@ export function FunctionComposer({ stageId }: { stageId: number }) {
       const answer = workspace.find((block) => block.id === answerId);
 
       if (!answer) {
-        setResult({ ok: false, message: "Choose a workspace block as your final answer." });
-        return;
-      }
-
-      const token = localStorage.getItem("eml_token");
-
-      if (!token) {
-        setResult({ ok: false, message: "Login is required." });
+        setResult({ ok: false, message: "최종 답으로 제출할 작업 공간 블록을 선택해 주세요." });
         return;
       }
 
@@ -124,8 +117,7 @@ export function FunctionComposer({ stageId }: { stageId: number }) {
         res = await fetch(`/api/stages/${stageId}/clear`, {
           method: "POST",
           headers: {
-            "content-type": "application/json",
-            authorization: `Bearer ${token}`
+            "content-type": "application/json"
           },
           body: JSON.stringify({
             expressionTree: answer.node,
@@ -133,7 +125,7 @@ export function FunctionComposer({ stageId }: { stageId: number }) {
           })
         });
       } catch {
-        setResult({ ok: false, message: "Could not connect to the web server." });
+        setResult({ ok: false, message: "웹 서버에 연결하지 못했습니다." });
         return;
       }
 
@@ -142,18 +134,18 @@ export function FunctionComposer({ stageId }: { stageId: number }) {
       if (data.cleared) {
         setResult({
           ok: true,
-          message: `Cleared. Verified by ${data.method ?? "equivalence check"}.`
+          message: `클리어! ${data.method ?? "동치성 검사"}로 검증되었습니다.`
         });
       } else {
         setResult({
           ok: false,
-          message: data.reason ?? data.error ?? "The selected block is not equivalent yet."
+          message: data.reason ?? data.error ?? "선택한 블록이 아직 목표 함수와 같지 않습니다."
         });
       }
     } catch (error) {
       setResult({
         ok: false,
-        message: error instanceof Error ? error.message : "Submit failed."
+        message: error instanceof Error ? error.message : "제출에 실패했습니다."
       });
     } finally {
       setSubmitting(false);
@@ -164,9 +156,9 @@ export function FunctionComposer({ stageId }: { stageId: number }) {
     <section className="composer panel">
       <div className="composerHeader">
         <div>
-          <h2>EML Workshop</h2>
+          <h2>EML 작업장</h2>
           <p className="muted">
-            Drag two blocks into the slots. Every combine creates EML(left, right).
+            두 블록을 칸에 넣고 합치면 항상 EML(왼쪽, 오른쪽) 형태의 새 블록이 만들어집니다.
           </p>
         </div>
         <button
@@ -180,13 +172,13 @@ export function FunctionComposer({ stageId }: { stageId: number }) {
             setResult(null);
           }}
         >
-          Reset
+          초기화
         </button>
       </div>
 
       <section className="emlWorkbench">
         <div className="palettePanel">
-          <h3>Blocks</h3>
+          <h3>블록</h3>
           <div className="dragPalette">
             {paletteBlocks.map((block) => (
               <button
@@ -215,40 +207,40 @@ export function FunctionComposer({ stageId }: { stageId: number }) {
         </div>
 
         <div className="combinerPanel">
-          <h3>EML Combiner</h3>
+          <h3>EML 조합기</h3>
           <div className="emlFormula">
             <strong>EML</strong>
             <span>(</span>
             <DropSlot
               block={left}
-              label="left"
+              label="왼쪽"
               onClear={() => setLeft(null)}
               onDrop={(event) => dropToSlot("left", event)}
             />
             <span>,</span>
             <DropSlot
               block={right}
-              label="right"
+              label="오른쪽"
               onClear={() => setRight(null)}
               onDrop={(event) => dropToSlot("right", event)}
             />
             <span>)</span>
           </div>
           <button className="primary" type="button" onClick={combine}>
-            Combine into New Block
+            새 EML 블록 만들기
           </button>
         </div>
       </section>
 
       <section className="workspacePanel">
         <div className="workspaceHeader">
-          <h3>Workspace</h3>
-          <span className="muted">{workspace.length} block(s)</span>
+          <h3>작업 공간</h3>
+          <span className="muted">블록 {workspace.length}개</span>
         </div>
 
         {workspace.length === 0 ? (
           <p className="emptyWorkspace">
-            Click or drag base blocks to start. Combine blocks to build deeper EML trees.
+            시작하려면 기본 블록을 클릭하거나 끌어오세요. 블록을 계속 합치면 더 깊은 EML 트리를 만들 수 있습니다.
           </p>
         ) : (
           <div className="workspaceBlocks">
@@ -272,10 +264,10 @@ export function FunctionComposer({ stageId }: { stageId: number }) {
 
       <div className="submitRow">
         <button className="primary submitButton" disabled={submitting} onClick={submit}>
-          {submitting ? "Checking..." : "Submit Selected Block"}
+          {submitting ? "검사 중..." : "선택한 블록 제출"}
         </button>
         <span className="muted">
-          {answerId ? "Selected answer is highlighted in the workspace." : "No answer selected."}
+          {answerId ? "작업 공간에서 강조된 블록이 제출됩니다." : "아직 선택된 답이 없습니다."}
         </span>
       </div>
 
@@ -309,11 +301,11 @@ function DropSlot({
         <>
           <span>{block.label}</span>
           <button type="button" onClick={onClear}>
-            Clear
+            비우기
           </button>
         </>
       ) : (
-        <span>Drop {label}</span>
+        <span>{label} 블록 놓기</span>
       )}
     </div>
   );
@@ -329,20 +321,20 @@ function BlockSummary({ availableBlocks }: { availableBlocks: ReturnType<typeof 
   return (
     <div className="palette">
       <div>
-        <h3>Unlocked</h3>
+        <h3>해금됨</h3>
         <div className="chips">
           {availableBlocks.map((block) => (
             <span className="chip" title={block.description} key={block.id}>
-              {block.id === "eml" ? "EML combiner" : block.label}
+              {block.id === "eml" ? "EML 조합기" : block.label}
             </span>
           ))}
         </div>
       </div>
       <div>
-        <h3>Locked Later</h3>
+        <h3>나중에 해금</h3>
         <div className="chips lockedChips">
           {locked.slice(0, 18).map((block) => (
-            <span className="chip lockedChip" title={`Stage ${block.unlockStage}`} key={block.id}>
+            <span className="chip lockedChip" title={`스테이지 ${block.unlockStage}`} key={block.id}>
               {block.label}
             </span>
           ))}
@@ -356,13 +348,13 @@ async function readJsonResponse(res: Response) {
   const text = await res.text();
 
   if (!text) {
-    return { error: `Empty server response. HTTP ${res.status}` };
+    return { error: `서버 응답이 비어 있습니다. HTTP ${res.status}` };
   }
 
   try {
     return JSON.parse(text);
   } catch {
-    return { error: text.slice(0, 240) || `Invalid server response. HTTP ${res.status}` };
+    return { error: text.slice(0, 240) || `서버 응답 형식이 올바르지 않습니다. HTTP ${res.status}` };
   }
 }
 

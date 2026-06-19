@@ -31,7 +31,7 @@ export async function verifyEmlSubmission(input: {
   } catch (error) {
     return {
       equivalent: false,
-      reason: error instanceof Error ? error.message : "Could not parse target function."
+      reason: error instanceof Error ? error.message : "목표 함수를 해석하지 못했습니다."
     };
   }
 
@@ -58,7 +58,7 @@ export async function verifyEmlSubmission(input: {
       return {
         equivalent: false,
         method: "numeric",
-        reason: "The selected block differs from the target on sampled inputs.",
+        reason: "샘플 입력에서 선택한 블록과 목표 함수의 값이 다릅니다.",
         expression: formatNumber(userValue),
         target: formatNumber(targetValue)
       };
@@ -70,7 +70,7 @@ export async function verifyEmlSubmission(input: {
       equivalent: false,
       method: "numeric",
       reason:
-        "Not enough valid samples to verify this target. Complex-only targets are not supported in the Vercel verifier yet."
+        "검증할 수 있는 유효 샘플이 부족합니다. 현재 Vercel 검증기는 복소수 전용 목표를 아직 지원하지 않습니다."
     };
   }
 
@@ -297,7 +297,7 @@ function tokenize(input: string): Token[] {
       continue;
     }
 
-    throw new Error(`Unsupported target token: ${char}`);
+    throw new Error(`지원하지 않는 목표 함수 토큰입니다: ${char}`);
   }
 
   tokens.push({ type: "eof", value: "" });
@@ -390,7 +390,7 @@ class TargetParser {
       return node;
     }
 
-    throw new Error(`Unexpected target token: ${token.value || token.type}`);
+    throw new Error(`예상하지 못한 목표 함수 토큰입니다: ${token.value || token.type}`);
   }
 
   private match(type: Token["type"]) {
@@ -418,13 +418,13 @@ class TargetParser {
 
   private expect(type: Token["type"]) {
     if (!this.match(type)) {
-      throw new Error(`Expected ${type}.`);
+      throw new Error(`${type} 토큰이 필요합니다.`);
     }
   }
 
   private expectSymbol(value: string) {
     if (!this.matchSymbol(value)) {
-      throw new Error(`Expected ${value}.`);
+      throw new Error(`${value} 토큰이 필요합니다.`);
     }
   }
 
@@ -442,7 +442,7 @@ function normalizeVariableName(name: string): "x" | "y" | "pi" | "e" | "i" {
     return name;
   }
 
-  throw new Error(`Unknown target variable or constant: ${name}`);
+  throw new Error(`알 수 없는 목표 변수 또는 상수입니다: ${name}`);
 }
 
 function normalizeFunctionName(name: string) {

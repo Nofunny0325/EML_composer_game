@@ -1,17 +1,17 @@
 export default function HelpPage() {
   return (
     <main className="page panel">
-      <h1>Help</h1>
+      <h1>도움말</h1>
       <p>
-        The only primitive operator is <strong>eml(a, b) = exp(a) - log(b)</strong>.
+        이 게임의 기본 연산자는 오직 <strong>eml(a, b) = exp(a) - log(b)</strong> 하나입니다.
       </p>
       <p>
-        In the player UI, solved functions become reusable blocks. Drag two blocks
-        into the EML combiner to create a new block, then reuse that new block.
+        클리어한 함수는 다시 쓸 수 있는 블록이 됩니다. 두 블록을 EML 조합기에 넣으면
+        새 블록이 생기고, 그 블록을 다시 조합에 사용할 수 있습니다.
       </p>
       <p className="muted">
-        Stage 1 answer: drag 1 into both EML slots, combine, then submit the new
-        EML(1, 1) block.
+        1스테이지 예시: 1을 EML의 양쪽 칸에 넣고 합친 다음, 새로 생긴 EML(1, 1)
+        블록을 제출하면 됩니다.
       </p>
     </main>
   );

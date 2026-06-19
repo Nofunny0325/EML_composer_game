@@ -8,7 +8,7 @@ export function StageHint({ description }: { description: string }) {
   return (
     <section className="hintBox">
       <button className="button ghost" type="button" onClick={() => setOpen((value) => !value)}>
-        {open ? "Hide Hint" : "Show Hint"}
+        {open ? "힌트 숨기기" : "힌트 보기"}
       </button>
       {open ? <p>{description}</p> : null}
     </section>

@@ -6,9 +6,8 @@ export default function RegisterPage() {
     <main className="page">
       <AuthForm mode="register" />
       <p className="muted" style={{ textAlign: "center" }}>
-        Already registered? <Link href="/login">Login</Link>
+        이미 가입했나요? <Link href="/login">로그인</Link>
       </p>
     </main>
   );
 }
-
